@@ -10,6 +10,3 @@ ENV PORT = 8080
 EXPOSE 8080
 
 CMD ./start.sh
-
-SupplementaryGroups=docker    
-ExecStartPost=/bin/chmod 666 /var/run/docker.sock

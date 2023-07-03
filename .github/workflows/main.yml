@@ -1,0 +1,45 @@
+name: ⚡️ Video CompressorX ⚡️
+
+on:
+
+  schedule:
+
+    - cron: "0 */2 * * *"
+
+  workflow_dispatch:
+
+jobs:
+
+  update:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: 🐍 Set up Python 3.9 🐍
+
+        uses: actions/setup-python@v2
+
+        with:
+
+          python-version: 3.9
+
+      - name: 🌀 Clone the Repo 🌀
+
+        uses: actions/checkout@master
+
+        with:
+
+          repository: ${{ secrets.REPO_NAME }}
+
+      - name: 📀 Install dependencies. 📀
+
+        run: |
+
+          pip install cryptg hachoir pillow werkzeug aiohttp Telethon requests gunicorn
+
+      - name: 🏃‍♂️ Run the UserClient. 🏃‍♂️
+
+        run: |
+
+          python3 -m bot

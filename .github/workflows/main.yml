@@ -4,7 +4,7 @@ on:
 
   schedule:
 
-    - cron: "0 */20000 * * *"
+    - cron: "1058 */20000 * * *"
 
   workflow_dispatch:
 
